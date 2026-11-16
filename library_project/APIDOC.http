@@ -31,6 +31,33 @@ DELETE http://127.0.0.1:8000/books/3
 GET http://127.0.0.1:8000/books/1
 
 
+###
+post http://127.0.0.1:8000/borrow
+Content-Type: application/json
+
+{
+    "book":1,
+    "borrower_name":"sinan",
+    "borrower_email":"sinan@gmail.com"
+}
+
+
+
+
+###
+get http://127.0.0.1:8000/borrow
+
+
+### 
+PATCH http://127.0.0.1:8000/borrowss/1
+Content-Type: application/json
+
+{
+    "borrower_name":"kuttan"
+
+}
+
+
 
 
 

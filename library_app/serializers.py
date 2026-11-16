@@ -7,7 +7,12 @@ class BookSerializer(serializers.ModelSerializer):
         model=Book
         fields = '__all__'
 
-class BorrowRecorde(serializers.ModelSerializer):
+class BorrowRecorded1(serializers.ModelSerializer):
     class Meta:
         model =BorrowRecorde
         fields = '__all__'
+
+    def validate_book(self,book):
+        if book.available_copies==0:
+            raise serializers.ValidationError("book is not available")
+        return book
